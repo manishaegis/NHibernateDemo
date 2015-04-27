@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="TestAppLinq" namespace="TestAppLinq" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="vwEmployeeWorkDetail" table="vwEmployeeWorkDetail" lazy="true" >
+    <id name="EmployeeId" column="EmployeeId"/>    
+    <property name="Name">
+      <column name="Name" sql-type="nvarchar" not-null="true" />
+    </property>
+    <property name="ProjectName">
+      <column name="ProjectName" sql-type="nvarchar" not-null="true" />
+    </property>
+    <property name="IsActive">
+      <column name="IsActive" sql-type="bit" not-null="true" />
+    </property>
+    <property name="DepartmentName">
+      <column name="DepartmentName" sql-type="varchar" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

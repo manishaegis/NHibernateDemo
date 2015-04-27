@@ -1,0 +1,48 @@
+﻿@model Employee
+
+@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>Use this area to provide additional information.</p>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfJoin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfJoin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Married)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Married)
+        </dd>
+
+    </dl>
+</div>

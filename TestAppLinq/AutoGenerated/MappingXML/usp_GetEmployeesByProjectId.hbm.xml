@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="TestAppLinq" namespace="TestAppLinq" xmlns="urn:nhibernate-mapping-2.2">
+  <sql-query name="usp_GetEmployeesByProjectId" callable="true">
+    <query-param name="ProjectId" type="System.Int32"/>
+    <return-scalar column="EmployeeId" type="System.Int32"/>
+    <return-scalar column="DepartmentId" type="System.Int32"/>
+    <return-scalar column="Name" type="System.String"/>
+    <return-scalar column="Age" type="System.Int32"/>
+    <return-scalar column="DateOfJoin" type="System.DateTime"/>
+    <return-scalar column="Married" type="System.Boolean"/>
+    exec usp_GetEmployeesByProjectId @ProjectId=:ProjectId
+  </sql-query>
+  <!--<class name="Employee" table="Employee" lazy="true" >
+    <id name="EmployeeId" column="EmployeeId">
+      <generator class="identity" />
+    </id>
+    <many-to-one name="Department">
+      <column name="DepartmentId" sql-type="int" not-null="true" />
+    </many-to-one>
+    <property name="Name">
+      <column name="Name" sql-type="nvarchar" not-null="true" />
+    </property>
+    <property name="Age">
+      <column name="Age" sql-type="int" not-null="true" />
+    </property>
+    <property name="DateOfJoin">
+      <column name="DateOfJoin" sql-type="datetime" not-null="true" />
+    </property>
+    <property name="Married">
+      <column name="Married" sql-type="bit" not-null="true" />
+    </property>
+
+  </class>-->
+  <!--<sql-query name="usp_GetEmployeesByProjectId">
+    <query-param name="ProjectId" type="System.Int32"/>
+    <return-property column="EmployeeId" type="System.Int32"/>
+    <return-property column="DepartmentId" type="System.Int32"/>
+    <return-property name="" column="Name" type="System.String"/>
+    <return-property name="" column="Age" type="System.Int32"/>
+    <return-property name="" column="DateOfJoin" type="System.DateTime"/>
+    <return-property name="" column="Married" type="System.Boolean"/>
+    exec usp_GetEmployeesByProjectId @ProjectId=:ProjectId
+  </sql-query>-->
+</hibernate-mapping>

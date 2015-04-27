@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="TestAppLinq" namespace="TestAppLinq" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Project" table="Project" lazy="true" >
+    <id name="ProjectId" column="ProjectId">
+      <generator class="identity" />
+    </id>
+    <property name="ProjectName">
+      <column name="ProjectName" sql-type="nvarchar" not-null="true" />
+    </property>
+    
+  </class>
+</hibernate-mapping>

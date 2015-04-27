@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="TestAppLinq" namespace="TestAppLinq" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="EmployeeProjectInfo" table="EmployeeProjectInfo" lazy="true" >
+    <id name="EmployeeProjectInfoId" column="EmployeeProjectInfoId">
+      <generator class="identity" />
+    </id>
+    <many-to-one name="Employee">
+      <column name="EmployeeId" sql-type="int" not-null="true" />
+    </many-to-one>
+    <many-to-one name="Project">
+      <column name="ProjectId" sql-type="int" not-null="true" />
+    </many-to-one>
+    <property name="IsActive">
+      <column name="IsActive" sql-type="bit" not-null="true" />
+    </property>
+  </class>
+</hibernate-mapping>

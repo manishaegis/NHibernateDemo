@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="TestAppLinq" namespace="TestAppLinq" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Employee" table="Employee" lazy="true" >
+    <id name="EmployeeId" column="EmployeeId">
+      <generator class="identity" />
+    </id>
+    <many-to-one name="Department">
+      <column name="DepartmentId" sql-type="int" not-null="true" />
+    </many-to-one>
+    <property name="Name">
+      <column name="Name" sql-type="nvarchar" not-null="true" />
+    </property>
+    <property name="Age">
+      <column name="Age" sql-type="int" not-null="true" />
+    </property>
+    <property name="DateOfJoin">
+      <column name="DateOfJoin" sql-type="datetime" not-null="true" />
+    </property>
+    <property name="Married">
+      <column name="Married" sql-type="bit" not-null="true" />
+    </property>
+
+  </class>
+</hibernate-mapping>
